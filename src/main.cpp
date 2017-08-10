@@ -43,13 +43,13 @@ int main(int argc, char *argv[])
     std::cout << argv[3] << "\t" << std::endl;
 
     Kp_init = atof(argv[1]);
-    Ki_init = 0.01;
-    Kd_init = 5;
+    Ki_init = atof(argv[2]);
+    Kd_init = atof(argv[3]);
   }
   else {
-    Kp_init = 0.3;
-    Ki_init = 0.8;
-    Kd_init = 1.0;
+    Kp_init = 0.12;
+    Ki_init = 0.001;
+    Kd_init = 1.2;
   }
   // Initialize the pid variable.
   pid.Init(Kp_init, Ki_init, Kd_init);

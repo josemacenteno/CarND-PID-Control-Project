@@ -16,7 +16,7 @@ I was able to complete a full lap with a P-only controller though, so I would co
 
 
 ### I
-In this project I added an I control, but I didn't see too much difference in the behavior compared to a PD-only controller. Therefore I didn tweak it any further. The fact that I is not very important means the car is not biased or mialigned, which means a steering angle of 0 should not modify the car angle.
+In this project I added an I control, but I didn't see too much difference in the behavior compared to a PD-only controller. Small or large I actually make the system unstable. Therefore I kept a very small Ki. The fact that there is no improvemnt with I means the car is not biased or mialigned, which means a steering angle of 0 should not modify the car angle.
 
 ### D
 This component helps us not overshoot when approaching the objective which corrects the zig zaging from a P-only controller. It also helps to correct disturbances. 
