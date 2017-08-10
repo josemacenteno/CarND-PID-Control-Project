@@ -28,14 +28,29 @@ std::string hasData(std::string s) {
   return "";
 }
 
-int main()
+int main(int argc, char *argv[])
 {
   uWS::Hub h;
 
   PID pid;
-  double Kp_init = 0.1;
-  double Ki_init = 0.01;
-  double Kd_init = 5;
+  double Kp_init;
+  double Ki_init;
+  double Kd_init;
+  if (argc == 4){
+    std::cout << "Using initialization values from command line args: ";
+    std::cout << argv[1] << "\t";
+    std::cout << argv[2] << "\t";
+    std::cout << argv[3] << "\t" << std::endl;
+
+    Kp_init = atof(argv[1]);
+    Ki_init = 0.01;
+    Kd_init = 5;
+  }
+  else {
+    Kp_init = 0.1;
+    Ki_init = 0.0;
+    Kd_init = 5.0;
+  }
   int setup_iterations = 100;
   int eval_iterations = 100;
   // Initialize the pid variable.
