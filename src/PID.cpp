@@ -18,11 +18,21 @@ void PID::Init(double Kp, double Ki, double Kd) {
   p_error = 0.0;
   i_error = 0.0;
   d_error = 0.0;
+
+  d_error_init = false;
 }
 
 void PID::UpdateError(double cte) {
   i_error += cte;
-  d_error  = cte - p_error;
+
+  // d_error could be mislead by p_error initialzation
+  if(!d_error_init){
+    d_error_init = 0.0;
+    d_error_init = true;
+  }
+  else{
+    d_error  = cte - p_error;
+  }
   p_error  = cte;
 }
 

@@ -47,12 +47,10 @@ int main(int argc, char *argv[])
     Kd_init = 5;
   }
   else {
-    Kp_init = 0.1;
-    Ki_init = 0.0;
-    Kd_init = 5.0;
+    Kp_init = 0.3;
+    Ki_init = 0.8;
+    Kd_init = 1.0;
   }
-  int setup_iterations = 100;
-  int eval_iterations = 100;
   // Initialize the pid variable.
   pid.Init(Kp_init, Ki_init, Kd_init);
 
