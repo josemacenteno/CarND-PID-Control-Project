@@ -28,3 +28,5 @@ When a disturbance comes into the system, the cte grows, which makes D contribut
 ## Final Values
 The final PID values selected by default where calculated manually tuning with a constant throttle of 0.3.
 
+Note you can pass exactly 3 floating values to the ./pid executable and play around with your own initialization. If nothing is passed, then the kp, ki, and kd gains are initialized to known good values obtained through manual tuning.
+
